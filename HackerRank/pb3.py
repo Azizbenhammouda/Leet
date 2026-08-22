@@ -39,3 +39,18 @@ def rotLeft(a, d):
         result[(i - d) % len(a)] = a[i]
 
     return result
+
+def minimumSwaps(arr):
+    swaps = 0
+    i = 0
+    
+    while i < len(arr):
+        correct_index = arr[i] - 1
+        
+        if arr[i] != i + 1:
+            arr[i], arr[correct_index] = arr[correct_index], arr[i]
+            swaps += 1
+        else:
+            i += 1
+            
+    return swaps
