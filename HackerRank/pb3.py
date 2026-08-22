@@ -12,3 +12,13 @@ def jumpingOnClouds(c):
 
     return jumps
 
+def repeatedString(s, n):
+    # Write your code here
+    num=s.count("a")
+    div=n // len(s)
+    reste=n%len(s)
+    result=num*div
+    arr = s[:reste]
+    count=arr.count("a")
+    result+=count
+    return result
