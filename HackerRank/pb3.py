@@ -68,3 +68,23 @@ def minimumBribes(q):
                 bribes += 1
 
     print(bribes)
+    
+def sherlockAndAnagrams(s):
+    count = 0
+
+    for length in range(1, len(s)):
+        seen = {}
+
+        for i in range(len(s) - length + 1):
+            substring = s[i:i + length]
+
+            # Anagrams have the same sorted characters
+            key = ''.join(sorted(substring))
+
+            if key in seen:
+                count += seen[key]
+                seen[key] += 1
+            else:
+                seen[key] = 1
+
+    return count
